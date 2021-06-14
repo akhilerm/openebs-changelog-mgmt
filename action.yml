@@ -1,11 +1,34 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Changelog Management'
+description: 'Creates changelog and update it in release and push to repository'
+author: 'akhilerm'
 inputs:
-  milliseconds: # change this
-    required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+  name:
+    required: false
+    description: 'name of user'
+    default: 'Github Actions'
+  email:
+    required: false
+    description: 'email of user'
+    default: 'actions@github.com'
+  changelog-dir: # change this
+    required: false
+    description: 'directory containing changelogs'
+    default: 'changelogs'
+  create-release-changelog-file:
+    required: false
+    description: 'enable to create changelog file for each release'
+    default: 'true'
+  create-release-changelog-dir:
+    required: false
+    description: 'enable to create changelog directory for each release'
+    default: 'false'
+  update-release-description:
+    required: false
+    description: 'to update the description of the release'
+    default: 'false'
+outputs:
+  changelog:
+    description: 'The generated changelog content'
 runs:
   using: 'node12'
   main: 'dist/index.js'
