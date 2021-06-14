@@ -26,6 +26,10 @@ inputs:
     required: false
     description: 'to update the description of the release'
     default: 'false'
+  release-branch-regex:
+    required: false
+    description: 'regex for the release branch format followed in the repo'
+    default: 'main'
 outputs:
   changelog:
     description: 'The generated changelog content'
